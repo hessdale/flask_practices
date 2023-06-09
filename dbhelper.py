@@ -19,3 +19,8 @@ def run_procedure(sql,args):
         if(conn != None):
             conn.close()
         return results
+
+def check_endpoint_info(sent_data,expected_data):
+    for data in expected_data:
+        if(sent_data.get(data) == None):
+            return f"The {data} paramater is required"
